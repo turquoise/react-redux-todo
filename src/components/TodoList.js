@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
+import { Container, Row, Col } from 'reactstrap';
 
 class TodoList extends Component {
 
@@ -21,9 +22,9 @@ class TodoList extends Component {
     let todos = this.props;
     console.log('TodoList todos from props ', todos);
     return (
-      <div className="container">
+      <Container>
         { this.renderTodos()}
-      </div>
+      </Container>
     )
   }
 }
