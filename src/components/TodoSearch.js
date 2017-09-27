@@ -10,6 +10,9 @@ class TodoSearch extends Component {
   }
 
   handleSearch() {
+    let showCompleted = this.refs.showCompleted.checked;
+    let searchText = this.refs.searchText.value;
+    this.props.onSearch(showCompleted, searchText);
 
   }
 
@@ -21,8 +24,11 @@ class TodoSearch extends Component {
               <Input type="search" ref="searchText" placeholder="Search todos" onChange={this.handleSearch}/>
           </FormGroup>
         </Form>
-        <FormGroup>
-          
+        <FormGroup check>
+          <Label check>
+            <Input type="checkbox" ref="showCompleted" onChange={this.handleSearch}/>{' '}
+              Show completed todos
+          </Label>
         </FormGroup>
 
       </Container>
